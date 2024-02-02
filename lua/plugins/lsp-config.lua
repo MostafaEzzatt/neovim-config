@@ -3,15 +3,15 @@ return {
     "williamboman/mason.nvim",
     config = function()
       require("mason").setup()
-    end
+    end,
   },
   {
     "williamboman/mason-lspconfig.nvim",
-    config= function()
+    config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "tsserver" }
+        ensure_installed = { "lua_ls", "tsserver" },
       })
-    end
+    end,
   },
   {
     "neovim/nvim-lspconfig",
@@ -19,11 +19,9 @@ return {
       local lspconfig = require("lspconfig")
       lspconfig.lua_ls.setup({})
       lspconfig.tsserver.setup({})
-      vim.keymap.set('n', 'D', vim.lsp.buf.hover, {})
-      vim.keymap.set('n', 'gD', vim.lsp.buf.definition, {})
-      vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
-    end
-  }
+      vim.keymap.set("n", "D", vim.lsp.buf.hover, {})
+      vim.keymap.set("n", "gD", vim.lsp.buf.definition, {})
+      vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+    end,
+  },
 }
-
-
